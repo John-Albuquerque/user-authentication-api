@@ -1,4 +1,4 @@
-package security.jwt;
+package com.john.user_authentication_api.security.jwt;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

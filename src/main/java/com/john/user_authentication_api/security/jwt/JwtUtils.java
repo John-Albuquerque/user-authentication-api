@@ -1,4 +1,4 @@
-package security.jwt;
+package com.john.user_authentication_api.security.jwt;
 
 import com.john.user_authentication_api.service.UserDetailsImpl;
 import io.jsonwebtoken.ExpiredJwtException;

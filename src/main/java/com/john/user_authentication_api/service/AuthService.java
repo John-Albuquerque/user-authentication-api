@@ -8,7 +8,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import security.jwt.JwtUtils;
+import com.john.user_authentication_api.security.jwt.JwtUtils;
 
 @Service
 public class AuthService {
@@ -39,5 +39,6 @@ public class AuthService {
         }catch (BadCredentialsException e){
             //TODO LOGIN OU SENHA INVALIDO
         }
+        return null;
     }
 }
