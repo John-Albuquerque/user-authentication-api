@@ -1,9 +1,9 @@
 package com.john.user_authentication_api.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.john.user_authentication_api.dto.UsuarioDTO;
+import jakarta.persistence.*;
+
+import java.util.Objects;
 
 @Entity
 public class UsuarioEntity {
@@ -11,24 +11,26 @@ public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private Integer id;
+    @Column(nullable = false)
     private String name;
-    private String email;
+    @Column(nullable = false)
+    private String senha;
+    @Column(nullable = false, unique = true)
     private String login;
 
 
-    public UsuarioEntity() {
-    }
-
-    public UsuarioEntity(Long id, String name, String email, String login) {
+    public UsuarioEntity(Integer id, String name, String senha, String login) {
         this.id = id;
         this.name = name;
-        this.email = email;
+        this.senha = senha;
         this.login = login;
     }
+    public UsuarioEntity(UsuarioDTO usuarioDto) {
+    }
 
-    public Long getId() {
+
+    public Integer getId() {
         return id;
     }
 
@@ -48,11 +50,25 @@ public class UsuarioEntity {
         this.login = login;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSenha(String senha) {
+
+
+        this.senha = this.senha;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        UsuarioEntity that = (UsuarioEntity) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
