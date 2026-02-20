@@ -28,7 +28,7 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     public static UserDetailsImpl build(UsuarioEntity usuario){
-        return new UserDetailsImpl(usuario.getId(), usuario.getName(), usuario.getLogin(), usuario.getEmail(), new ArrayList<>());
+        return new UserDetailsImpl(usuario.getId(), usuario.getName(), usuario.getLogin(), usuario.getLogin(), new ArrayList<>());
     }
 
     @Override

@@ -11,7 +11,8 @@ public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
@@ -20,7 +21,7 @@ public class UsuarioEntity {
     private String login;
 
 
-    public UsuarioEntity(Integer id, String name, String senha, String login) {
+    public UsuarioEntity(Long id, String name, String senha, String login) {
         this.id = id;
         this.name = name;
         this.senha = senha;
@@ -30,7 +31,7 @@ public class UsuarioEntity {
     }
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
