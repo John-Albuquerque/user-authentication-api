@@ -15,21 +15,25 @@ public class UsuarioEntity {
 
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
-    private String senha;
     @Column(nullable = false, unique = true)
     private String login;
+    @Column(nullable = false)
+    private String senha;
 
 
-    public UsuarioEntity(Long id, String name, String senha, String login) {
+    public UsuarioEntity(Long id, String name, String login, String senha) {
         this.id = id;
         this.name = name;
-        this.senha = senha;
         this.login = login;
+        this.senha = senha;
     }
     public UsuarioEntity(UsuarioDTO usuarioDto) {
+        this.name = usuarioDto.getName();
+        this.login = usuarioDto.getLogin();
     }
 
+    public UsuarioEntity() {
+    }
 
     public Long getId() {
         return id;
@@ -55,10 +59,11 @@ public class UsuarioEntity {
         return senha;
     }
 
+
     public void setSenha(String senha) {
 
 
-        this.senha = this.senha;
+        this.senha = senha;
     }
 
     @Override

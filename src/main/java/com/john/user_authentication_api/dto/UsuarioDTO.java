@@ -8,12 +8,13 @@ public class UsuarioDTO {
         private Long id;
         private String name;
         private String login;
+        private String senha;
 
     public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
     }
 
-    public UsuarioDTO(){
+    public UsuarioDTO() {
     }
 
     public Long getId() {
@@ -35,5 +36,13 @@ public class UsuarioDTO {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
