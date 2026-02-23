@@ -17,19 +17,23 @@ public class UsuarioEntity {
     private String name;
     @Column(nullable = false, unique = true)
     private String login;
+    @Column(nullable = false, unique = true)
+    private String email;
     @Column(nullable = false)
     private String senha;
 
 
-    public UsuarioEntity(Long id, String name, String login, String senha) {
+    public UsuarioEntity(Long id, String name, String login, String senha, String email) {
         this.id = id;
         this.name = name;
         this.login = login;
         this.senha = senha;
+        this.email = email;
     }
     public UsuarioEntity(UsuarioDTO usuarioDto) {
         this.name = usuarioDto.getName();
         this.login = usuarioDto.getLogin();
+        this.email = usuarioDto.getEmail();
     }
 
     public UsuarioEntity() {
@@ -59,6 +63,13 @@ public class UsuarioEntity {
         return senha;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public void setSenha(String senha) {
 

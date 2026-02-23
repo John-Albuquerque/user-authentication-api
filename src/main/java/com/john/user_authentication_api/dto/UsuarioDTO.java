@@ -9,6 +9,7 @@ public class UsuarioDTO {
         private String name;
         private String login;
         private String senha;
+        private String email;
 
     public UsuarioDTO(UsuarioEntity usuario) {
         BeanUtils.copyProperties(usuario, this);
@@ -44,5 +45,14 @@ public class UsuarioDTO {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
